@@ -18,10 +18,10 @@ public class Cavalo {
         }
     }
 
-    public boolean resolverPasseio(int inicioX, int inicioY) {
+    public boolean resolverMovimento(int inicioX, int inicioY) {
         tabuleiro[inicioX][inicioY] = 1;
 
-        if (encontrarPasseio(inicioX, inicioY, 2)) {
+        if (encontrarMovimento(inicioX, inicioY, 2)) {
             System.out.println("Passeio do Cavalo Encontrado!");
             imprimirTabuleiro();
             return true;
@@ -31,7 +31,7 @@ public class Cavalo {
         }
     }
 
-    private boolean encontrarPasseio(int atualX, int atualY, int contagemMovimento) {
+    private boolean encontrarMovimento(int atualX, int atualY, int contagemMovimento) {
         if (contagemMovimento > tamanho * tamanho) {
             return true;
         }
@@ -43,7 +43,7 @@ public class Cavalo {
             if (movimentoValido(proximoX, proximoY)) {
                 tabuleiro[proximoX][proximoY] = contagemMovimento;
 
-                if (encontrarPasseio(proximoX, proximoY, contagemMovimento + 1)) {
+                if (encontrarMovimento(proximoX, proximoY, contagemMovimento + 1)) {
                     return true;
                 }
 
@@ -73,7 +73,7 @@ public class Cavalo {
         int inicioLinha = 0;
         int inicioColuna = 0;
 
-        if (!passeio.resolverPasseio(inicioLinha, inicioColuna)) {
+        if (!passeio.resolverMovimento(inicioLinha, inicioColuna)) {
             System.out.println("Nenhum passeio encontrado a partir de (" + inicioLinha + ", " + inicioColuna + ").");
         }
     }

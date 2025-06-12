@@ -26,9 +26,14 @@ public class MochilaPD {
 
                         matrizMochila[i][j] = Math.max(valorSemItem, valorComItem);
 
-                        System.out.println("Matriz mochila["+i+"]["+j+"]: Avaliando item "+itemAtual.getNome() + "(P: "+itemAtual.getPeso()+") "+itemAtual.getPeso() + ", V: "+itemAtual.getValor());
+                        System.out.println("Matriz mochila["+i+"]["+j+"]: Avaliando item "+itemAtual.getNome()
+                                + "(P: "+itemAtual.getPeso()+") "+itemAtual.getPeso() + ", V: "+itemAtual.getValor());
+
                         System.out.println("    - Valor sem item: " + valorSemItem + " (de Matriz Mochila[" + (i-1) + "][" + j + "])");
-                        System.out.println("    - Valor com item: " + valorComItem + " (item + Matriz Mochila[" + (i-1) + "][" + (j-itemAtual.getPeso()) + "])");
+
+                        System.out.println("    - Valor com item: " + valorComItem + " (item + Matriz Mochila[" + (i-1) + "]["
+                                + (j-itemAtual.getPeso()) + "])");
+
                         System.out.println("    - Escolha: " + matrizMochila[i][j]);
                     } else {
                         matrizMochila[i][j] = matrizMochila[i-1][j];

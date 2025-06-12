@@ -16,14 +16,6 @@ public class Mochila {
         return capacidadeMaxima;
     }
 
-    public void setCapacidadeMaxima(int capacidadeMaxima) {
-        this.capacidadeMaxima = capacidadeMaxima;
-    }
-
-    public List<Item> getItensAdicionados() {
-        return itensAdicionados;
-    }
-
     public void adicionarItem(Item item) {
         this.itensAdicionados.add(item);
     }
